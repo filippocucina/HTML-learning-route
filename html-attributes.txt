@@ -1,0 +1,102 @@
+Los atributos contienen información adicional sobre el elemento que no aparecerá en el 
+contenido. En este ejemplo, el atributo class es un nombre de identificación utilizado 
+para identificar el elemento con información de estilo.
+
+Un atributo debe tener:
+
+Un espacio entre él y el nombre del elemento. (Para un elemento con más de un atributo, los atributos también deben estar separados por espacios).
+El nombre del atributo, seguido de un signo igual.
+Un valor de atributo, envuelto con comillas de apertura y cierre.
+Aprendizaje activo: añadir atributos a un elemento
+El elemento <img> puede tomar una serie de atributos, que incluyen:
+
+src
+El atributo src es un atributo requerido que especifica la ubicación de la imagen. 
+Por ejemplo: src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages
+/images/firefox-icon.png".
+
+alt
+El atributo alt especifica una descripción de texto de la imagen. Por ejemplo: 
+alt="El icono de Firefox".
+
+width
+El atributo width especifica el ancho de la imagen con la unidad en píxeles. Por ejemplo: width="300".
+
+height
+El atributo height especifica la altura de la imagen con la unidad en píxeles. 
+Por ejemplo: height="300".
+
+-- Atributos Booleanos --
+
+A veces verás atributos escritos sin valores. Esto es totalmente aceptable. 
+Estos se llaman atributos booleanos. Los atributos booleanos solo pueden tener 
+un valor, que generalmente es el mismo que el nombre del atributo. Por ejemplo, 
+considere el atributo disabled, que puede asignar a los elementos de entrada de 
+formulario. (Utiliza esto para deshabilitar los elementos de entrada del formulario 
+para que el usuario no pueda realizar entradas. Los elementos deshabilitados 
+suelen tener un aspecto grisáceo.) Por ejemplo:
+
+<input type="text" disabled="disabled" />
+
+Como abreviatura, es aceptable escribir esto de la siguiente manera:
+
+<!-- el uso del atributo deshabilitado impide que el usuario final introduzca texto en el cuadro de entrada -->
+<input type="text" disabled />
+
+<!-- se permite la entrada de texto, ya que no contiene el atributo deshabilitado -->
+<input type="text" />
+
+
+-- Omitir Comillas en torno a los valores de atributo --
+
+Si observa el código de muchos otros sitios, es posible que encuentre una serie de 
+estilos de marcado extraños, incluidos los valores de atributos sin comillas. 
+Esto está permitido en ciertas circunstancias, pero también puede romper su margen 
+de beneficio en otras circunstancias. El elemento en el fragmento de código a 
+continuación, <a>, se llama ancla. Los anclajes encierran texto y los convierten en 
+enlaces. El atributo href especifica la dirección web a la que apunta el enlace. 
+Puedes escribir esta versión básica a continuación con solo el atributo href, así:
+
+
+<a href=https://www.mozilla.org/>sitio web favorito</a>
+
+Los anclajes también pueden tener un atributo title, una descripción de la página 
+vinculada. Sin embargo, tan pronto como añadimos el title de la misma manera que el 
+atributo href hay problemas:
+
+<a href=https://www.mozilla.org/ title=Pagina de Mozilla>sitio web favorito</a>
+
+Como se ha escrito anteriormente, el navegador malinterpreta el marcado, confundiendo 
+el atributo title con tres atributos: un atributo title con el valor The, y dos 
+atributos booleanos, Mozilla y homepage. ¡Obviamente, esto no es la intención! 
+Causará errores o comportamientos inesperados, como puede ver en el ejemplo en vivo 
+a continuación. ¡Intenta pasar el cursor sobre el enlace para ver el texto del título!
+
+Incluya siempre las comillas de los atributos. Evita tales problemas y da como resultado un código más legible.
+
+¿Comillas simples o dobles?
+En este artículo, también notarás que los atributos están entre comillas dobles. 
+Sin embargo, es posible que veas comillas simples en algún código HTML. 
+Es una cuestión de estilo. Puedes elegir libremente cuál prefieres. Ambas opciones 
+son equivalentes:
+
+<a href='https://www.example.com'>Un enlace a mi ejemplo.</a>
+
+<a href="https://www.example.com">Un enlace a mi ejemplo.</a>
+
+Asegúrate de no mezclar comillas simples y comillas dobles. Este ejemplo (a continuación) muestra una especie de mezcla de comillas que saldrá mal:
+
+<a href="https://www.example.com'>Un enlace a mi ejemplo.</a>
+
+Sin embargo, si utilizas un tipo de comilla, puedes incluir el otro tipo de comilla 
+dentro tus valores de atributo:
+
+<a href="https://www.example.com" title="¿No es 'esto' divertido?">
+  Un enlace a mi ejemplo.
+</a>
+
+Para usar comillas dentro de otras comillas del mismo tipo (comillas simples o comillas dobles), use entidades HTML. Por ejemplo, esto se romperá:
+<a href="https://www.example.com" title="Una referencia "interesante"">Un enlace a mi ejemplo.</a>
+
+En su lugar, debe hacer lo siguiente:
+<a href="https://www.example.com" title="Una referencia &quot;interesante&quot;">Un enlace a mi ejemplo.</a>
