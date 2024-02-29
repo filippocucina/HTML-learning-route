@@ -1,0 +1,77 @@
+<em>Este elemento pone al texto en recursiva</em>
+
+-- Espacios en Blanco en HTML --
+
+En los ejemplos anteriores, es posible que hayas notado que se incluyen muchos espacios en blanco en el código. Este paso es opcional. Estos dos fragmentos de código son equivalentes:
+
+<p id="noWhitespace">Los perros son tontos.</p>
+
+<p id="whitespace">Los perros
+    son
+        tontos.</p>
+
+No importa cuánto espacio en blanco utilice dentro del contenido del elemento HTML 
+(que puede incluir uno o más caracteres de espacio, o también saltos de línea), el 
+analizador HTML reduce cada secuencia de espacio en blanco a un solo espacio al 
+representar el código. Entonces, ¿por qué usar tanto espacio en blanco? La respuesta es la legibilidad.
+
+Puede ser más fácil entender lo que está pasando en tu código si lo tienes bien 
+formateado. En nuestro HTML tenemos cada elemento anidado indentado por dos espacios 
+más que el que está dentro. Depende de usted elegir el estilo de formato (cuántos 
+espacios para cada nivel de indentación, por ejemplo), pero debe considerar formatearlo.
+
+Echemos un vistazo a cómo el navegador representa los dos párrafos anteriores con y sin espacios en blanco:
+
+ El acceso a innerHTML de los elementos de JavaScript mantendrá intacto todo el espacio en blanco. Esto puede arrojar resultados inesperados si el navegador recorta el espacio en blanco
+
+-- Referencias de entidades: incluir caracteres especiales en HTML --
+
+En HTML, los caracteres <, >, ", ' y & son caracteres especiales. Son partes de la sintaxis HTML en sí. Entonces, ¿cómo incluyes uno de estos caracteres especiales en tu texto? Por ejemplo, si desea usar un signo ampersand (&) o menor que, y no interpretarlo como código.
+
+Haces esto con referencias de caracteres. Estos son códigos especiales que representan caracteres, para ser utilizados en estas circunstancias exactas. Cada referencia de carácter comienza con un ampersand (&) y termina con un punto y coma (;).
+
+Carácter Literal	-	Referencia de carácter equivalente
+<				&lt;
+>			-	&gt;
+"			-	&quot;
+'			-	&apos;
+&			-	&amp;
+
+El equivalente de referencia de carácter podría recordarse fácilmente porque el texto 
+que utiliza puede verse como menor que (less than, en inglés) para '&lt;', comilla 
+(quot, en inglés) para '&quot;' y de manera similar para otros. Para obtener más 
+información sobre las referencias de entidades, consulta Lista de referencias de 
+entidades de caracteres XML y HTML (Wikipedia).
+
+En el siguiente ejemplo, hay dos párrafos:
+
+<p>En HTML, se define un párrafo utilizando el elemento <p>.</p>
+
+<p>En HTML, se define un párrafo utilizando el elemento &lt;p&gt;.</p>
+
+En la salida en vivo a continuación, puede ver que el primer párrafo ha salido mal. 
+El navegador interpreta la segunda instancia de <p> como comenzar un nuevo párrafo. 
+El segundo párrafo se ve bien porque tiene corchetes angulares con referencias de 
+caracteres.
+
+Nota: No es necesario usar referencias de entidad para ningún otro símbolo, ya que 
+los navegadores modernos manejarán bien los símbolos reales siempre que la codificación de caracteres de tu HTML esté configurada en UTF-8.
+
+-- Comentarios en HTML --
+
+HTML tiene un mecanismo para escribir comentarios en el código. Los navegadores 
+ignoran los comentarios, lo que hace que los comentarios sean invisibles para el 
+usuario. El propósito de los comentarios es permitirle incluir notas en el código 
+para explicar su lógica o codificación. Esto es muy útil si vuelve a una base de 
+código después de estar ausente el tiempo suficiente para no recordarlo por completo. 
+Del mismo modo, los comentarios son invaluables ya que diferentes personas están 
+haciendo cambios y actualizaciones.
+
+Para escribir un comentario en HTML, envuélvalo en los marcadores especiales <!-- y -->. Por ejemplo:
+
+<p>No estoy dentro de un comentario</p>
+
+<!-- <p>¡Yo si estoy!</p> -->
+
+
+
