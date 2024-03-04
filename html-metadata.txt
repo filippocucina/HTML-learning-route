@@ -51,4 +51,58 @@ para extraer automáticamente la información del autor de la página y ponerla 
 disposición para tales fines.
 
 
-Especificar una descripción que incluya palabras clave relacionadas con el contenido de tu página resulta útil porque tiene el potencial de hacer que la página aparezca más arriba en las búsquedas relevantes que efectúan los motores de búsqueda (tales actividades se denominan optimizaciones del motor de búsqueda (Optimización de motores de búsqueda) o SEO.)
+Especificar una descripción que incluya palabras clave relacionadas con el contenido de tu página resulta útil 
+porque tiene el potencial de hacer que la página aparezca más arriba en las búsquedas relevantes que efectúan 
+los motores de búsqueda (tales actividades se denominan optimizaciones del motor de búsqueda (Optimización de 
+motores de búsqueda) o SEO.)
+
+Nota: En Google verás algunas subpáginas relevantes de MDN enumeradas debajo del enlace principal a la página 
+principal de MDN (se trata de los llamados sitelinks y se pueden configurar con las Herramientas de administrador de Google), una forma de mejorar los resultados para tu sitio con el motor de búsqueda de Google.
+
+Nota: Muchas características <meta> ya no se usan. Por ejemplo, los motores de búsqueda ignoran el elemento 
+<meta> (<meta name="keywords" content="pon, tus, palabras clave, aquí">), que se supone que facilita palabras 
+clave para motores de búsqueda de forma que se determine la relevancia de esa página según diferentes términos 
+de búsqueda, porque los spammers rellenaban la lista de palabras clave con cientos de palabras clave que sesgaban los resultados.
+
+-- Otros tipos de metadatos --
+
+Al navegar por la web tambien puedes encontrar otros tipos de metadatos. Muchas de las funciones que verás en los sitios web son creaciones propietarias diseñadas para proporcionar a ciertos sitios (como los sitios de redes sociales) información especifica que puedan usar
+
+Por ejemplo, Open Graph Data es un protocolo de metadatos que Facebook inventó para proveer metadatos más ricos para los sitios web. En las fuentes de código de MDN, encontrarás esto:
+
+<meta
+  property="og:image"
+  content="https://developer.mozilla.org/mdn-social-share.png" />
+<meta
+  property="og:description"
+  content="The Mozilla Developer Network (MDN) proporciona información
+sobre tecnologías Open Web, incluidas HTML, CSS y APIs para ambos sitios web
+y aplicaciones HTML5. También documenta productos Mozilla, como el sistema operativo Firefox." />
+<meta property="og:title" content="Mozilla Developer Network" />
+
+Un efecto de esto es que cuando desde Facebook enlazas a un MDN, el enlace aparece con una imagen y una descripción, lo que resulta en una experencia más enriquecedora para los usuarios.
+
+
+Twitter también tiene sus metadatos propios, las Twitter Cards, que tienen un efecto similar cuando la URL del sitio se muestra en twitter.com. Por ejemplo:
+
+<meta name="twitter:title" content="Mozilla Developer Network" />
+
+-- Agregar iconos personalizados a tu sitio --
+
+Para enriquecer un poco más el diseño de tu sitio puedes añadir en tus metadatos referencias a iconos personalizados, que se mostrarán en determinados contextos. El más común de ellos es el favicon (abreviatura de favorite icon 
+—icono «favorito», referido al uso que se le da en las listas de «favoritos» o de marcadores («bookmarks»)
+
+
+El humilde favicon ha existido durante muchos años. Es el primer icono de este tipo: un icono cuadrado de 16 píxeles que se utiliza en varios lugares. Es posible que veas (según el navegador) favicons que se muestran en la pestaña del navegador que contiene cada página abierta y junto a las páginas marcadas en el panel de marcadores.
+
+Para añadir un favicon a tu página:
+
+Guárdalo en el mismo directorio que la página index de tu sitio, en formato .ico (la mayoría de los buscadores 
+admiten favicon en los formatos más comunes como .gif o .png, pero usar el formato ICO garantiza que funcionará 
+hasta en Internet Explorer 6.)
+
+Añade la siguiente línea de referencia en el <head> de tu HTML:
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+
