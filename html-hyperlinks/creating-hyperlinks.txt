@@ -1,2 +1,64 @@
+<<<<<<< HEAD
 -- Creating Hyperlinks -- 
+=======
+-- Creating Hyperlinks --
+
+Hyperlinks are very important, they are what makes the web a web. This article shows the syntax required to make a
+link, and discusses link best practices.
+
+-- What is a hyperlink? --
+
+Hyperlinks are one of the most exciting innovations the web has to offer. They have been a feature of the web since the beginning, and are what makes the web a web. Hyperlinks allow us to link documents to other documents or 
+resources, link to specific parts of documents, or make apps available at a web address. Almost any web content can be converted to a link so that when clicked or otherwise activated thr web browser goes to another web address (URL)
+
+
+A URL can point to HTML files, text files, images, text documents, video and audio files, or anything else that lives on the Web. If the web browser doesn't know how to display or handle the file, it will ask you if you want to open the file (in which case the 
+duty of opening or handling the file is passed to a suitable native app on the device) 
+or download the file (in which case you can try to deal with it later on).
+
+For example, the BBC homepage contains many links that point not only to multiple 
+news stories, but also different areas of the site (navigation functionality), 
+login/registration pages (user tools), and more.
+
+-- Anatomy of a link --
+
+A basic link is created by wrapping the next or other content inside an <a> element and using the href attribute, also known as HyperText Reference, or Target, that contains
+the web address.
+
+<p>
+  I'm creating a link to
+  <a href="https://www.mozilla.org/en-US/">the Mozilla homepage</a>.
+</p>
+
+
+-- Block Level Links --
+
+As mentioned before, almost any content can be made into a link, even block-level-elements. If you want to make a heading element a link then wrap it in a anchor (<a>) element as shwon in the following code snippet:
+
+<a href="https://developer.mozilla.org/en-US/">
+  <h1>MDN Web Docs</h1>
+</a>
+<p>
+  Documenting web technologies, including CSS, HTML, and JavaScript, since 2005.
+</p>
+
+This truns the heading into a link.
+
+-- Image Links --
+
+If you have an image you want to make into a link use the <a> element to wrap the image file referenced with the <img> element. The example below uses a relative path to reference a locally stored SVG image file.
+
+<a href="https://developer.mozilla.org/en-US/">
+  <img src="mdn_logo.svg" alt="MDN Web Docs" />
+</a>
+
+
+This makes the MDN logo a link.
+
+
+-- Adding supporting information with the tittle atrribute --
+
+Another attrivute you may want to add yo your links is title. The title constains addional information about the link, such as which kind of information the page constains, or things to be aware of on the website.
+
+>>>>>>> main
 
