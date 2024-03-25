@@ -237,4 +237,40 @@ an example with a download link to the latest Windows version of Firefox:
 </a>
 
 
+- Email Links --
 
+It's possible to create links or buttons that, when clicked, open a new outgoing email
+message rather than linking to a resource or page. This is done using the <a> element
+and the mailto: URL scheme.
+
+in its most basic and commonly used form, a mailto: link indicates the email address of the intended recipient. For example:
+
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+
+This results in a link that looks like this: Send Email to nowhere.
+
+In fact, the email address is optional. If you omit it and your href is "mailto:", a new outgoing email window will be opened by the user's email client with no destination 
+address. This is often useful as "Share" links that users can click to send an email 
+to an address of their choosing.
+
+Specifying details
+In addition to the email address, you can provide other information. In fact, any standard mail header fields can be added to the mailto URL you provide. The most commonly used of these are "subject", "cc", and "body" (which is not a true header field, but allows you to specify a short content message for the new email). Each field and its value is specified as a query term.
+
+Here's an example that includes a cc, bcc, subject and body:
+
+
+<a
+  href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+  Send mail with cc, bcc, subject and body
+</a>
+
+
+Note: The values of each field must be URL-encoded with non-printing characters (invisible characters like tabs, carriage returns, and page breaks) and spaces percent-escaped. Also, note the use of the question mark (?) to separate the main URL from the field values, and ampersands (&) to separate each field in the mailto: URL. This is standard URL query notation. Read The GET method to understand what URL query notation is more commonly used for.
+
+Here are a few other sample mailto URLs:
+
+mailto:
+mailto:nowhere@mozilla.org
+mailto:nowhere@mozilla.org,nobody@mozilla.org
+mailto:nowhere@mozilla.org?cc=nobody@mozilla.org
+mailto:nowhere@mozilla.org?cc=nobody@mozilla.org&subject=This%20is%20the%20subject
