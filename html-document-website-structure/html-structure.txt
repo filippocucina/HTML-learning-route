@@ -1,0 +1,209 @@
+--- Document and Website structure ---
+
+in addition to defining individual parts of your page (such as "a paragraph" or "an 
+image"), HTML also boasts to a number of block level elements used to define areas of 
+your website (such as "the header", "the navigation menu", "the main content column").
+This article looks into how to plan a basic website structure, and write the HTML to represent the strcuture.
+
+
+--- Basic sections of a document ---
+
+Webpages can and will look pretty different from one another, but they all tend to share similar standar components, unless the page is displaying a fullscreen video or game,
+is part of some kind of art project, or is just badly structured:
+
+* header: Usually a big strip across the top with a big heading, logo, and perhaps a 
+tagline. This usually stays the same from one webpage to another 
+
+* navigation bar: Links to the site's main sections; usually represented by menu button,
+links, or tabs. Like the header, this content usually remains consistent from one 
+webpage to another -- having incosistent navigation on your website will just lead to 
+confused, frustated users. Many web designers consider the navigation bar to be part of the header rather than a individual component, but that's not a requirement; in fact, 
+some also argue that having the two separate is better for accessibility, as screen 
+readers can read the two features better if they are separate.
+
+* main content: A big area in the center that contains most of the unique content of a
+given webpage, for exmaple, the video you want to watch, or the main story you're 
+reading, or the map you want to view, or the news headlines, ect. This is the one part
+of the website taht definitely will vary from page to page!.
+
+* sidebar: Some peripheral info, links, quotes, ads, ect. Usually, this is contextual to what is contained in the main content (for example on a news article page, the sidebar might contain the author's bio, or links to related articles) but there are also cases 
+where you will find some recurring elements like a secondary navigation system.
+
+* footer: A strip across the bottom of the page that generally contains fine print,
+copyright notices, or contact info. It's a place to put common information (like the
+header) but usually, that information is not critical or secondary to the website 
+itself. The footer is also sometimes used for SEO purposes, by providing links for quick access to popular content.
+
+--- HTML for structuring content ---
+The simple example shown above isn't pretty, but it is perfectly fine for illustrating a typical website layout example. Some websites have more columns, some are a lot more complex, but you get the idea. With the right CSS, you could use pretty much any elements to wrap around the different sections and get it looking how you wanted, but as discussed before, we need to respect semantics and use the right element for the right job.
+
+This is because visuals don't tell the whole story. We use color and font size to draw sighted users' attention to the most useful parts of the content, like the navigation menu and related links, but what about visually impaired people for example, who might not find concepts like "pink" and "large font" very useful?
+
+
+Note: Roughly 8% of men and 0.5% of women are colorblind; or, to put it another way, approximately 1 in every 12 men and 1 in every 200 women. Blind and visually impaired people represent roughly 4-5% of the world population (in 2015 there were 940 million people with some degree of vision loss, while the total population was around 7.5 billion).
+
+In your HTML code, you can mark up sections of content based on their functionality — 
+you can use elements that represent the sections of content described above 
+unambiguously, and assistive technologies like screen readers can recognize those 
+elements and help with tasks like "find the main navigation", or "find the main 
+content." As we mentioned earlier in the course, there are a number of consequences 
+of not using the right element structure and semantics for the right job.
+
+
+To implement such semantic mark up, HTML provides dedicated tags that you can use to
+represent usch sections, for example:
+
+* header: <header>
+* navigation bar: <nav>
+* main content: <main>, with various content subsections represented by <article>, 
+<section>, and <div> elements.
+* sidebar: <aside>; often placed inside <main>.
+* footer: <footer>
+
+-- HTML layout elements in more detail --
+
+It's good to understand the overall meaning of all the HTML sectioning elements in 
+detail -- This is something you'll work on gradually as your start to get more 
+experience with web dev. You can find a lot of detail by reading our HTML element 
+reference. For now, these are the main definitions that you should try to understand:
+
+* <main>: is fir content unique to this page. Use <main> only once per page, and put it directly inside <body>. Ideally this shouldn't be nested within other elements.
+
+* <article>: encloses a block of related content that makes sense on its own without the rest of the page (e.g, a single blog post).
+
+* <section>: is similar to <article>, but it is more for grouping togheter a single part of the page that constitutes one single piece of functionality (e.g, a mini map, or a 
+set or article headlines and summaries), or a theme. It's considered best practice to
+begin each section with a heading; also note that you can break <article>s uo into 
+different <section>s, or <section>s up into different <article>s, depending on the 
+context.
+
+* <aside>: contains content that is not directly related to main content but can provide additional information indirectly realted to it (glossary entries, author biography, realted links, ect).
+
+* <header>: represents a group of introductory content. If it is a child of <body> it defines the global header of a webpage, but if it's a child of an <article> or <section> 
+it defines a specific header for that section (try not to confuse this with titles and
+headings).
+
+* <nav>: contains the main navigation functionality for the page. Secondary links, etc, would not go in the navigation.
+
+* <footer>: represnets a group of end for a page
+
+
+--- Non-semantic wrappers ---
+
+Sometimes you will come across a situation where you can not find an ideal semantic element to gropu some itmes togheter or wrao some content. Sometimes you might want to just group a set of elements togheter to affect them all as a single entity with some CSS or JS code. For cases like these, HTML provides the <div> and <span> elements. You should
+use these preferably with a suitable class attribute, to provide some kind of label for them so tehy can be easily targeted.
+
+<span> is an inline non-semantic element, which you should only use if you can not thinkof a better semantic text element to wrap your content, or dont want to add any specific menaing. For example:
+
+
+<p>
+  The King walked drunkenly back to his room at 01:00, the beer doing nothing to
+  aid him as he staggered through the door.
+  <span class="editor-note">
+    [Editor's note: At this point in the play, the lights should be down low].
+  </span>
+</p>
+
+
+In this case, the editor's note is supposed to merely provide extra direction for the director of the play; it is not supposed to have extra semantic meaning. For sighted users, CSS would perhaps be used to distance the note slightly from the main text.
+
+
+<div> is a block level non-semantic element, which you should only use if you can not think of a better semantic block element to use, or dont want to add any specific meaning.For example, imagine a shopping cart widget that you could choose to pull up at any
+point during your time on an e-commerce site:
+
+<div class="shopping-cart">
+  <h2>Shopping cart</h2>
+  <ul>
+    <li>
+      <p>
+        <a href=""><strong>Silver earrings</strong></a>: $99.95.
+      </p>
+      <img src="../products/3333-0985/thumb.png" alt="Silver earrings" />
+    </li>
+    <li>…</li>
+  </ul>
+  <p>Total cost: $237.89</p>
+</div>
+
+
+This isn't really an <aside>, as it doesnt necessarily relate to the main content of the
+page (you want it viewable from anywhere). It doesnt even particularly warrant using a
+<section>, as it isn't part of the main content of the page. So a <div> is fine in this case. We've included a heading as a signpost to aid screen reader users in finding it.
+
+
+Warning: Divs are so convenient to use that it's easy to use them too much. As they 
+carry no semantic value, they just clutter your HTML code. Take care to use them only 
+when there is no better semantic solution and try to reduce their usage to the minimum 
+otherwise you'll have a hard time updating and maintaining your documents.
+
+
+--- Line breaks and horizontal rules ---
+Two elements that you'll use occasionally and will want to know about are <br> and <hr>.
+
+
+* <br>: the line break element
+<br> creates a line break in a paragraph; it is the only way to force a rigid structure in a situation where you want a series of fixed short lines, such as in a postal address or a poem. For example:
+
+<p>
+  There once was a man named O'Dell<br />
+  Who loved to write HTML<br />
+  But his structure was bad, his semantics were sad<br />
+  and his markup didn't read very well.
+</p>
+
+
+Without the <br> elements, the paragraph would just be rendered in one long line (as we said earlier in the course, HTML ignores most whitespace);
+
+* <hr>: the thematic break element
+
+<hr> elements create a horizontal rule in the document that denotes a thematic change in the text (such as a change in topic or scene). Visually it just lokks like a horizontal line. As an example:
+
+<p>
+  Ron was backed into a corner by the marauding netherbeasts. Scared, but
+  determined to protect his friends, he raised his wand and prepared to do
+  battle, hoping that his distress call had made it through.
+</p>
+<hr />
+<p>
+  Meanwhile, Harry was sitting at home, staring at his royalty statement and
+  pondering when the next spin off series would come out, when an enchanted
+  distress letter flew through his window and landed in his lap. He read it
+  hazily and sighed; "better get back to work then", he mused.
+</p>
+
+
+--- Planning a simple website ---
+Once you've planned out the structure of a simple webpage, the next logical step is to 
+try to work out what content you want to put on a whole website, what pages you need, 
+and how they should be arranged and link to one another for the best possible user 
+experience. This is called Information architecture. In a large, complex website, a 
+lot of planning can go into this process, but for a simple website of a few pages, 
+this can be fairly simple, and fun!
+
+1. - Bear in mind that you'll have a few elements common to most (if not all) pages — 
+such 
+as the navigation menu, and the footer content. If your site is for a business, for 
+example, it's a good idea to have your contact information available in the footer on 
+each page. Note down what you want to have common to every page.
+
+
+2. - Next, draw a rough skecth of what you might want the structure of each page to look like (it might look like our simple wbesite above). Note what each block is going to be
+
+3. - Mow, brainstorm all the other (not common to every page) content you want to have
+on your website -- wrtie a big list down.
+
+4. - Next, try to sort all these content items into groups, to give you an idea of what parts might live togheter on different pages. This is very similar to a technique called Card Sorting. Guess what? I want to implement this in Programming!.
+
+
+
+5. - Now try to sketch a rough sitemap — have a bubble for each page on your site, and draw lines to show the typical workflow between pages. The homepage will probably be in the center, and link to most if not all of the others; most of the pages in a small site should be available from the main navigation, although there are exceptions. You might also want to include notes about how things might be presented.
+
+
+Summary
+At this point, you should have a better idea about how to structure a web page/site. In the next article of this module, we'll learn how to debug HTML.
+
+
+Summary
+At this point, you should have a better idea about how to structure a web page/site. In the next article of this module, we'll learn how to debug HTML.
+
+
