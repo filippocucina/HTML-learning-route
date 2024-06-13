@@ -327,30 +327,4 @@ p {
 }
 
 The resulting embedded image is arguably easier to position and control than HTML 
-images. So why bother with HTML images? As hinted to above, CSS background images are for decoration only. if you just want to add something pretty to your page to enhance the visuals, this is fine. Though such images have no semantic meaning at all. THey can't have any text equivalents, are invisible to screen readers, and so on.
-This is where HTML images shine!
-
-Summing up: if an image has meaning, in terms of your content, you should use an HTML image. If an image is purely decoration, you should use CSS background images.
-
-NOTE: You will learn a lot more about CSS background images in OUR CSS topic.
-
-Other graphics on the web
-We've seen that static images can be displayed using the <img> element, or by setting the background of HTML elements using the background-image property. You can also construct graphics on-the-fly, or manipulate images after the fact. The browser offers ways of creating 2D and 3D graphics with code, as well as including video from uploaded files or live streamed from a user's camera. Here are links to articles that provide insight into these more advanced graphics topics:
-
-Canvas
-The <canvas> element provides APIs to draw 2D graphics using JavaScript.
-
-SVG
-Scalable Vector Graphics (SVG) let you use lines, curves, and other geometric shapes to render 2D graphics. With vectors, you can create images that scale cleanly to any size.
-
-WebGL
-The WebGL API guide will get you started with WebGL, the 3D graphics API for the Web that lets you use standard OpenGL ES in web content.
-
-Using HTML audio and video
-Just like <img>, you can use HTML to embed <video> and <audio> into a web page and control its playback.
-
-WebRTC
-The RTC in WebRTC stands for Real-Time Communications, a technology that enables audio/video streaming and data sharing between browser clients (peers).
-
-Done.
-
+images.
