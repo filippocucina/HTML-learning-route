@@ -1,0 +1,46 @@
+The next step is to start adding video and audio players to your HTML documents!. In this article we'll look at doing just that with the <video> and <audio> elements; we'll then finish off by looking at how add captions/subtitles to your videos.
+
+--- Video and Audio on the web ---
+
+The first influx of online videos and audio were possible by proprietary plugin-based technologies like Flash and Silverlight. Both of these had security and accessibility issues, and are now obsolete, in favor of native HTML solutions <video> and <audio> elements and the availability of JavaScript APIs for controlling them. We'll not be looking at 
+JavaScript -- just the basic foundations that can be achieved with HTML.
+
+We won't be teaching you how to produce audio and video files - that requieres a completely different skill set. We have provided you with sample audio and video files and example code for your own experimentation, in case you are unable to get hold of your own.
+
+NOTE: Before you begin here, you should also knpw that there are quit a few OVPs (online video providers) like Youtube, dailymotion and vimeo. and online audio providers like
+soundcloud. Such companies offer a convenient, easy way to host and consume videos, so you don't have to worry about the enormous bandwdth consumption. OVPs even usually offer ready-madre code for embedding video/audio in your webpages; if you use that route, you can avoid some of the difficulties we discuss in this article. We'll be discussing this kind of service a bit more in the next article.
+
+
+--- the <video> element ---
+
+The <video> element allows you to embed a video very easily. A really simple example looks like this:
+
+<video src="rabbit320.webm" controls>
+  <p>
+    Your browser doesn't support HTML video. Here is a
+    <a href="rabbit320.webm">link to the video</a> instead.
+  </p>
+</video>
+
+
+The features of note are:
+
+-src: in the same way as for the <img> element, the src (source) attribute contains a path to the video you want to embed. It works in exactly the same way.
+
+-controls: Users must be able to control video and audio playback (it's especially critical for people who have epilepsy). You must either use the controls attribute to include the browser's own control interface, or build your interface using the appropriate JavaScript API. At a minimum, the interface must include a way to start and stop the media, and to adjust the volume.
+
+-The paragraph inside the <video> tags: this is called fallback content -- this will be displayed if the browser accessing the page doesn't support the <video> element, allowing us to provide a fallback for older browsers. This can be anything you like; in this case, we've provided a direcr link to the video file, so the user can at least access it some way regardless of what browser they are using.
+
+
+--- Using multipler source formats to improve compatibility ---
+
+There's a problem with the above example. It is possible that the video might not play 
+for you, because different browsers support different video (and audio) formats.
+Fortunately, there are things you can do to help prevent this from being an issue.
+
+- Contents of a media file -
+
+First, let's go through the terminology quickly. Formats like MP3, MP4 and WebM are 
+called container formats. They define a structure in which the audio and/or video tracks that make up the media are stored, along with the metadata describing the media, what codecs are used to encode its channels, and so forth.
+
+A WebM file containing a movie which has a main video track and one alternate angle track, plus audio for both English and Spanish, in addition to audio for an English commentary 
